@@ -1,0 +1,51 @@
+.cabecalho{
+    align-items: center;
+    background-color:#FDFEFF ;
+    display: flex;
+    justify-content: space-around;
+    padding: 1rem 0;
+}
+
+.navbar{
+    display: flex;
+}
+
+.lista{
+    display: flex;
+    list-style-type: none;
+}
+
+
+.image_user{
+    margin-right: 10px;
+}
+
+.link_select{
+    border: none;
+    color:#ED2590;
+    width: 20px;
+}
+
+
+
+.login{
+    align-items: center;
+    border: none;
+    display: flex;
+}
+
+.search_box{
+    border-radius: 5px;
+    background-color: #B4AEAE;
+    border: none;
+    color: #ED2590;
+    opacity: 50%;
+    margin-right: 30px;
+    padding: 0 1rem;
+    width:355px;
+    height:44px;
+}
+
+.options{
+    color: black;
+}

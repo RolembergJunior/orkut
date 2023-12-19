@@ -1,0 +1,17 @@
+.container_profile{
+    background-color: #FDFEFF;
+    margin: 5rem auto;
+    padding: 2rem;
+    text-align: center;
+    width: 80%;
+}
+
+.profile_photo{
+    border-radius: 50%;
+}
+
+.profile_text{
+    line-height: 2.5;
+    margin: 0 2rem;
+    text-justify: auto;
+}

@@ -1,0 +1,23 @@
+.subcontainer{
+    background-color: #FDFEFF;
+    border-radius: 10px;
+    display: flex;
+    grid-row: 1 / 2;
+    grid-column: 1 / 2;
+    justify-self: end;
+    height: 500px;
+    width: 400px;
+}
+
+.user_profile{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+}
+
+.name_profile{
+    color: black;
+    width: 280px;
+    font-size: 26px;
+}

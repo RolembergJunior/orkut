@@ -1,0 +1,11 @@
+.box_data{
+    background-color: #FDFEFF;
+    border-radius: 10px;
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    padding: 2rem;
+}
+
+.data_user{
+    line-height: 3;
+}
