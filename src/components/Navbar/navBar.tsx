@@ -1,12 +1,14 @@
 'use client'
 
-import { useContext } from 'react';
+import { ChangeEvent, useContext } from 'react';
 import './navBar.css'
 import { AuthContext } from '@/context/auth';
 import ActiveLink from '../ActiveLink/activeLink';
 
+
+
 export default function NavBar(){
-    const { handleLogout } = useContext(AuthContext);
+    const { handleLogout }:TypeFunction = useContext(AuthContext);
 
 
     return(

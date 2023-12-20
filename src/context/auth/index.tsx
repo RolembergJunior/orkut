@@ -1,35 +1,45 @@
 import Cookie from 'js-cookie'
 import { useRouter } from "next/navigation";
-import { createContext, useState } from "react";
+import { Router } from 'next/router';
+import { ChangeEvent, ReactNode, createContext, useState } from "react";
 
 
 export const AuthContext = createContext();
 
+interface ProfilesData{
+    email: string,
+    password: string
+}
+
+interface TypeFunction{
+    // handleLogin: (formData:{email: string, password: string}) => undefined,
+    handleLogout: (e:ChangeEvent<HTMLSelectElement>) => undefined
+}
 
 
-export const AuthProvider = ({children}) => {
+export const AuthProvider:React.FC<ReactNode> = ({children}) => {
     const [user, setUser] = useState({});
     const router = useRouter();
 
     
-    function handleLogin(profiles){
+    function handleLogin(profiles:ProfilesData){
         if(profiles.email && profiles.password){
             setUser({...user, profiles})
 
             Cookie.set('auth_token', 'asdasdasdqwenhjdwqosdiuhsakjs')
 
-            router.push('/home')
+             return router.push('/home')
         }
     
 
     }
     
-    function handleLogout(e){
+    function handleLogout(e):TypeFunction{
 
         if(e.target.value === "logout"){
             Cookie.remove('auth_token')
 
-            router.push('/')
+            return router.push('/')
         }      
     }
 

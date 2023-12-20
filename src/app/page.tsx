@@ -2,13 +2,16 @@
 
 import Link from 'next/link'
 import './login.css'
-import { useContext, useState } from 'react'
+import { ChangeEvent, FormEvent, useContext, useState } from 'react'
 import { AuthContext } from '@/context/auth'
 import { useRouter } from 'next/navigation'
 
 
+
+
+
 export default function Login(){
-const { user, setuser, handleLogin, handleLogout } = useContext(AuthContext);
+const { handleLogin } = useContext(AuthContext);
 const [formData, setFormData] = useState({
     email:'',
     password: ''
@@ -16,11 +19,11 @@ const [formData, setFormData] = useState({
 
 const router = useRouter()
 
-function handleFormEdit(e, name){
+function handleFormEdit(e:ChangeEvent<HTMLInputElement>, name:string){
     setFormData({...formData, [name]: e.target.value })
 }
 
-function handleSumit(e){
+function handleSumit(e:FormEvent<HTMLFormElement>){
         e.preventDefault()
 
         handleLogin(formData)
