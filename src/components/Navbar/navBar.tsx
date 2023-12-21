@@ -8,7 +8,7 @@ import ActiveLink from '../ActiveLink/activeLink';
 
 
 export default function NavBar(){
-    const { handleLogout }:TypeFunction = useContext(AuthContext);
+    const { handleLogout } = useContext(AuthContext);
 
 
     return(

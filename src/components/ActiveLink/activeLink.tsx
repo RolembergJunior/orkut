@@ -22,13 +22,13 @@ export default function ActiveLink({ children, href }:ActiveLinkProps){
         fontWeight: pathName === href ? 700 : 100
     }
 
-    function handleClick(e: React.MouseEvent<HTMLButtonElement>){
+    function handleClick(e){
         e.preventDefault()
         router.push(href)
     }
 
     return(
-        <Link className='link' href={href} onClick={(e) => {handleClick(e)}} style={style} >{children}</Link>
+        <Link className='link' href={href} onClick={(e: MouseEvent<HTMLButtonElement>) => {handleClick(e)}} style={style} >{children}</Link>
     )
 
 }

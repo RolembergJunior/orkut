@@ -4,20 +4,25 @@ import { Router } from 'next/router';
 import { ChangeEvent, ReactNode, createContext, useState } from "react";
 
 
-export const AuthContext = createContext();
-
 interface ProfilesData{
     email: string,
     password: string
 }
 
-interface TypeFunction{
-    // handleLogin: (formData:{email: string, password: string}) => undefined,
-    handleLogout: (e:ChangeEvent<HTMLSelectElement>) => undefined
+interface Junin{
+    handleLogout: (e:ChangeEvent<HTMLSelectElement>) => void
+    handleLogin: (formData:ProfilesData) => void,
+    user: object,
+    setUser: (user: {}) => void
 }
 
+export const AuthContext = createContext({} as Junin);
 
-export const AuthProvider:React.FC<ReactNode> = ({children}) => {
+interface Props{
+    children:React.FC<ReactNode> 
+}
+
+export const AuthProvider = ({children}:Props ) => {
     const [user, setUser] = useState({});
     const router = useRouter();
 
@@ -28,13 +33,13 @@ export const AuthProvider:React.FC<ReactNode> = ({children}) => {
 
             Cookie.set('auth_token', 'asdasdasdqwenhjdwqosdiuhsakjs')
 
-             return router.push('/home')
+            return router.push('/home')
         }
     
 
     }
     
-    function handleLogout(e):TypeFunction{
+    function handleLogout(e:ChangeEvent<HTMLSelectElement>):void{
 
         if(e.target.value === "logout"){
             Cookie.remove('auth_token')
